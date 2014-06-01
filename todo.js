@@ -22,8 +22,11 @@ todoApp.controller('mainCtrl', ['$scope',
     };
     
     $scope.clearCompleted = function() {
-      $scope.todos.filter(function(todo) {
-        return todo.status === "pending";
-      })
+      $scope.todos.forEach(function(todo) {
+        if (todo.status === "completed") {
+          var idx = $scope.todos.indexOf(todo);
+          $scope.todos.splice(idx, 1);
+        }
+      });
     };
   }]);

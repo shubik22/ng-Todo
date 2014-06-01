@@ -40,5 +40,6 @@ form.todos > input {
 
 span.completed {
   font-style: italic;
+  text-decoration: line-through;
   color: #CC0200;
 }
