@@ -13,20 +13,15 @@
   <script src="todo.js"></script>
 </head>
 <body ng-controller="mainCtrl">
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-inverse" role="navigation">
     <div class="container ">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">ng-Todo</a>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-ok"></span> ng-Todo</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          </li>
-        </ul>
         <ul class="nav navbar-nav navbar-right">
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
@@ -39,7 +34,7 @@
     </div><!-- /.container-fluid -->
   </nav>  
   <div class="jumbotron container">
-      <h1 class="text-center">ng-Todo</h1>
+      <h1 class="text-center"><span class="glyphicon glyphicon-ok"></span> ng-Todo</h1>
       <h4 class="text-center">Not Your Grandparents' Todo App</h2>
       <form class="todos" ng-repeat="todo in todos | filter:searchText">
         <input type="checkbox" ng-click="toggleStatus(todo)" ng-checked="{{checked(todo)}}" class="row">
@@ -56,5 +51,7 @@
         </span>
     </form>
   </div>
+  <footer>
+    Created by <a href="http://sweeneysam.com">Sam Sweeney</a>  (<a href="http://github.com/shubik22">Source</a>)
 </body>
 </html>
