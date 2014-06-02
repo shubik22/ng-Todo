@@ -10,6 +10,10 @@ todoApp.controller('mainCtrl', ['$scope',
       todo.status = (todo.status === "pending") ? "completed" : "pending";
     };
     
+    $scope.checked = function(todo) {
+      return todo.status === "completed";
+    };
+    
     $scope.addTodo = function() {
       if ($scope.newTodo) {
         var todo = {
