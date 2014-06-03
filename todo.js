@@ -26,11 +26,16 @@ todoApp.controller('mainCtrl', ['$scope',
     };
     
     $scope.clearCompleted = function() {
+      var completedIdxs = [];
+      
       $scope.todos.forEach(function(todo) {
         if (todo.status === "completed") {
-          var idx = $scope.todos.indexOf(todo);
-          $scope.todos.splice(idx, 1);
+          completedIdxs.unshift($scope.todos.indexOf(todo));
         }
       });
+
+      completedIdxs.forEach(function(idx) {
+        $scope.todos.splice(idx, 1);
+      })
     };
   }]);
